@@ -4,3 +4,21 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+
+.container {
+  height: 600px;
+  width: 70%;
+  border: 2px solid black;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+}
+
+article {
+  border: 1px solid blue;
+  margin: 5px;
+  /*display: flex;*/
+}

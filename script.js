@@ -4,21 +4,6 @@
 $('.submit-button').on('click', function() {
   var linkTitle = $('.title-input').val();
   $('.link-title').text(linkTitle);
+  var urlTitle = $('.url-input').val();
+  $('.url-title').text(urlTitle);
 });
-
-
-// Submit Button functions
-// submitButton.addEventListener('click', function(){
-//   linkTitle.innerText=titleInput.value;
-//   urlName.innerText=urlInput.value;
-//
-//
-// });
-//
-// readButton.addEventListener('click', function(){
-//
-// });
-//
-// removeButton.addEventListener('click', function(){
-//
-// });
