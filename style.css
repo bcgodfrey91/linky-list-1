@@ -20,5 +20,15 @@ html {
 article {
   border: 1px solid blue;
   margin: 5px;
-  /*display: flex;*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.remove-button {
+  margin-right: 10px;
+}
+
+.link-title {
+  margin-left: 10px;
 }
