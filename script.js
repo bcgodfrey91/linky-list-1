@@ -1,18 +1,24 @@
-var submitButton = document.querySelector('.submit-button');
-var readButton = document.querySelector('.read-button');
-var removeButton = document.querySelector('.remove-button');
-var titleInput = document.querySelector('.title-input');
-var urlInput = document.querySelector('.url-input');
+
+// Practicing some jquery
+
+$('.submit-button').on('click', function() {
+  var linkTitle = $('.title-input').val();
+  $('.link-title').text(linkTitle);
+});
+
 
 // Submit Button functions
-submitButton.addEventListener('click', function(){
-
-});
-
-submitButton.addEventListener('click', function(){
-
-});
-
-submitButton.addEventListener('click', function(){
-
-});
+// submitButton.addEventListener('click', function(){
+//   linkTitle.innerText=titleInput.value;
+//   urlName.innerText=urlInput.value;
+//
+//
+// });
+//
+// readButton.addEventListener('click', function(){
+//
+// });
+//
+// removeButton.addEventListener('click', function(){
+//
+// });
