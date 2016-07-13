@@ -2,8 +2,6 @@ var titleInput = $('.title-input');
 var urlInput = $('.url-input');
 var submitButton = $('.submit-button');
 var clearReadBookmarksButton = $('.clear-read-bookmarks');
-var counter = 0;
-var readCounter = 0;
 
 // Disable Submit Button
 function checkInputs() {
@@ -23,26 +21,20 @@ disableSubmit();
 
 // Link Counter
 
-function countLinks() {
-  counter++;
-  $('.link-counter').text('Number of Links: ' + counter);
-}
-
-function removeLinks() {
-  counter--;
-  $('.link-counter').text('Number of Links: ' + counter);
-}
-
-// Submit Button Functions
-
-function numberOfReadLinks() {
+function countAll () {
   readCounter = $('.read').length;
+  totalCounter = $('article').length;
+  unreadCounter = totalCounter - readCounter;
+  $('.link-counter').text('Number of Links: ' + totalCounter);
   $('.read-links').text('Number of Read Links: ' + readCounter);
-  var unreadCounter = counter - readCounter;
   $('.unread-links').text('Number of Unread Links: ' + unreadCounter);
 }
 
-//
+countAll();
+
+function removeLinks() {
+  $('.link-counter').text('Number of Links: ' + $('article').length);
+}
 
 submitButton.on('click', function() {
 
@@ -65,29 +57,23 @@ submitButton.on('click', function() {
         '</div>' +
       '</article>'
     );
-
-countLinks();
-  //Toggles Read Class when Read Button is clicked
-    // $('.read-button').on('click', function() {
-    //   $(this).parent().parent().toggleClass('read');
-    // });
+    countAll();
   }
+});
+
+clearReadBookmarksButton.on('click', function() {
+    $('.read').remove('article');
+    countAll();
 });
 
 // Removes when Remove Button is clicked
 $('.container').on('click', '.remove-button', function() {
   $(this).parent().parent().remove('article');
   removeLinks();
-  numberOfReadLinks();
+  countAll();
 });
 
 $('.container').on('click', '.read-button', function() {
   $(this).parent().parent().toggleClass('read');
-  numberOfReadLinks();
+  countAll();
 });
-
-clearReadBookmarksButton.on('click', function() {
-    $('.read').remove('article');
-});
-
-// numberOfReadLinks();
