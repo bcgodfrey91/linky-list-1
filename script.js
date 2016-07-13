@@ -26,6 +26,11 @@ function countLinks() {
   $('.link-counter').text('Number of Links: ' + counter);
 }
 
+function removeLinks() {
+  counter--;
+  $('.link-counter').text('Number of Links: ' + (counter));
+}
+
 // Submit Button Functions
 
 submitButton.on('click', function() {
@@ -50,15 +55,16 @@ submitButton.on('click', function() {
       '</article>'
     );
 
-
+countLinks();
   //Toggles Read Class when Read Button is clicked
     $('.read-button').on('click', function() {
       $(this).parent().parent().toggleClass('read');
     });
-  //Removes when Remove Button is clicked
-    $('.remove-button').on('click', function() {
-      $(this).parent().parent().remove('article');
-    });
-    countLinks();
   }
+});
+
+// Removes when Remove Button is clicked
+$('.container').on('click', '.remove-button', function() {
+  $(this).parent().parent().remove('article');
+  removeLinks();
 });
