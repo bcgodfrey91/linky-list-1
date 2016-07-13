@@ -1,7 +1,9 @@
 var titleInput = $('.title-input');
 var urlInput = $('.url-input');
 var submitButton =$('.submit-button');
+var counter = 0;
 
+// Disable Submit Button
 function checkInputs() {
   if(titleInput.val()==='' || urlInput.val()==='') {
     submitButton.prop('disabled', true);
@@ -16,6 +18,15 @@ function disableSubmit() {
 };
 
 disableSubmit();
+
+// Link Counter
+
+function countLinks() {
+  counter++;
+  $('.link-counter').text('Number of Links: ' + counter);
+}
+
+// Submit Button Functions
 
 submitButton.on('click', function() {
 
@@ -39,6 +50,7 @@ submitButton.on('click', function() {
       '</article>'
     );
 
+
   //Toggles Read Class when Read Button is clicked
     $('.read-button').on('click', function() {
       $(this).parent().parent().toggleClass('read');
@@ -47,5 +59,6 @@ submitButton.on('click', function() {
     $('.remove-button').on('click', function() {
       $(this).parent().parent().remove('article');
     });
+    countLinks();
   }
 });
