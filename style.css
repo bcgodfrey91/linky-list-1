@@ -20,15 +20,25 @@ html {
 article {
   border: 1px solid blue;
   margin: 5px;
+  display: flex
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.button-group {
   display: flex;
-  justify-content:space-between;
-  align-items: center;
+  justify-content: center;
 }
 
-.remove-button{
-    margin-right: 10px;
+.remove-button,
+.read-button {
+    margin: 10px;
+
 }
 
-.link-title {
+.link-title,
+.url-title {
   margin-left: 10px;
 }
+
+@
