@@ -2,6 +2,7 @@ var titleInput = $('.title-input');
 var urlInput = $('.url-input');
 var submitButton =$('.submit-button');
 var counter = 0;
+var readCounter = 0;
 
 // Disable Submit Button
 function checkInputs() {
@@ -28,10 +29,18 @@ function countLinks() {
 
 function removeLinks() {
   counter--;
-  $('.link-counter').text('Number of Links: ' + (counter));
+  $('.link-counter').text('Number of Links: ' + counter);
 }
 
 // Submit Button Functions
+
+function numberOfReadLinks() {
+  readCounter = $('.read').length;
+  $('.read-links').text('Number of Read Links: ' + readCounter);
+}
+
+
+//
 
 submitButton.on('click', function() {
 
@@ -57,9 +66,9 @@ submitButton.on('click', function() {
 
 countLinks();
   //Toggles Read Class when Read Button is clicked
-    $('.read-button').on('click', function() {
-      $(this).parent().parent().toggleClass('read');
-    });
+    // $('.read-button').on('click', function() {
+    //   $(this).parent().parent().toggleClass('read');
+    // });
   }
 });
 
@@ -67,4 +76,12 @@ countLinks();
 $('.container').on('click', '.remove-button', function() {
   $(this).parent().parent().remove('article');
   removeLinks();
+  numberOfReadLinks();
 });
+
+$('.container').on('click', '.read-button', function() {
+  $(this).parent().parent().toggleClass('read');
+  numberOfReadLinks();
+});
+
+// numberOfReadLinks();
