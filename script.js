@@ -1,6 +1,7 @@
 var titleInput = $('.title-input');
 var urlInput = $('.url-input');
-var submitButton =$('.submit-button');
+var submitButton = $('.submit-button');
+var clearReadBookmarksButton = $('.clear-read-bookmarks');
 var counter = 0;
 var readCounter = 0;
 
@@ -83,6 +84,10 @@ $('.container').on('click', '.remove-button', function() {
 $('.container').on('click', '.read-button', function() {
   $(this).parent().parent().toggleClass('read');
   numberOfReadLinks();
+});
+
+clearReadBookmarksButton.on('click', function() {
+    $('.read').remove('article');
 });
 
 // numberOfReadLinks();
