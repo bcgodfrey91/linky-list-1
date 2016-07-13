@@ -37,8 +37,9 @@ function removeLinks() {
 function numberOfReadLinks() {
   readCounter = $('.read').length;
   $('.read-links').text('Number of Read Links: ' + readCounter);
+  var unreadCounter = counter - readCounter;
+  $('.unread-links').text('Number of Unread Links: ' + unreadCounter);
 }
-
 
 //
 
