@@ -24,11 +24,11 @@ $('.submit-button').on('click', function() {
   var titleInput = $('.title-input');
   var urlInput = $('.url-input');
 
-  if($(urlInput).val()==='' && $(titleInput).val()==='') {
-    infoSection.text('wut');
-  } else if($(titleInput).val()==='') {
+  if(urlInput.val()==='' && titleInput.val()==='') {
+    infoSection.text('Really? 🙄');
+  } else if(titleInput.val()==='') {
   infoSection.text('Please enter a title for your link.');
-} else if($(urlInput).val()==='') {
+} else if(urlInput.val()==='') {
   infoSection.text('Please enter a valid URL.');
 } else {
 
