@@ -2,14 +2,18 @@ var titleInput = $('.title-input');
 var urlInput = $('.url-input');
 var submitButton =$('.submit-button');
 
+function checkInputs() {
+  if(titleInput.val()==='' || urlInput.val()==='') {
+    submitButton.prop('disabled', true);
+  } else {
+    submitButton.prop('disabled', false);
+  }
+}
+
+
 function disableSubmit() {
-  urlInput.keyup(function() {
-    if($(this).val()==='') {
-      submitButton.prop('disabled', true);
-    } else {
-      submitButton.prop('disabled', false);
-    }
-  })
+  urlInput.keyup(checkInputs);
+  titleInput.keyup(checkInputs);
 };
 
 disableSubmit();
