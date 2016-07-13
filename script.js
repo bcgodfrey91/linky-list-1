@@ -5,8 +5,6 @@ $('.submit-button').on('click', function() {
   $('.container').append('<article><p class="link-title">' + $('.title-input').val() + '</p><p class="url-title">' + $('.url-input').val() + '</p><div class="button-group"><button class="read-button">Mark as Read</button><button class="remove-button">Remove</button><div></article>');
 
   $('.read-button').on('click', function() {
-    $('article').click(function () {
-      $(this).toggleClass('read')
+      $(this).parent().parent().toggleClass('read');
     });
   });
-});
