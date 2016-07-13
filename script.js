@@ -1,7 +1,10 @@
 var titleInput = $('.title-input');
 var urlInput = $('.url-input');
 var submitButton =$('.submit-button');
+var counter = 0;
+var readCounter = 0;
 
+// Disable Submit Button
 function checkInputs() {
   if(titleInput.val()==='' || urlInput.val()==='') {
     submitButton.prop('disabled', true);
@@ -16,6 +19,29 @@ function disableSubmit() {
 };
 
 disableSubmit();
+
+// Link Counter
+
+function countLinks() {
+  counter++;
+  $('.link-counter').text('Number of Links: ' + counter);
+}
+
+function removeLinks() {
+  counter--;
+  $('.link-counter').text('Number of Links: ' + counter);
+}
+
+// Submit Button Functions
+
+function numberOfReadLinks() {
+  readCounter = $('.read').length;
+  $('.read-links').text('Number of Read Links: ' + readCounter);
+  var unreadCounter = counter - readCounter;
+  $('.unread-links').text('Number of Unread Links: ' + unreadCounter);
+}
+
+//
 
 submitButton.on('click', function() {
 
@@ -39,13 +65,24 @@ submitButton.on('click', function() {
       '</article>'
     );
 
+countLinks();
   //Toggles Read Class when Read Button is clicked
-    $('.read-button').on('click', function() {
-      $(this).parent().parent().toggleClass('read');
-    });
-  //Removes when Remove Button is clicked
-    $('.remove-button').on('click', function() {
-      $(this).parent().parent().remove('article');
-    });
+    // $('.read-button').on('click', function() {
+    //   $(this).parent().parent().toggleClass('read');
+    // });
   }
 });
+
+// Removes when Remove Button is clicked
+$('.container').on('click', '.remove-button', function() {
+  $(this).parent().parent().remove('article');
+  removeLinks();
+  numberOfReadLinks();
+});
+
+$('.container').on('click', '.read-button', function() {
+  $(this).parent().parent().toggleClass('read');
+  numberOfReadLinks();
+});
+
+// numberOfReadLinks();
