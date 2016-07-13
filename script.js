@@ -1,25 +1,26 @@
-// var titleInput = document.querySelector('.title-input');
-// var urlInput = document.querySelector('.url-input');
-// var infoSection = document.querySelector('.info');
+var titleInput = $('.title-input');
+var urlInput = $('.url-input');
+var submitButton =$('.submit-button');
 
-// function checkTitleInput() {
-//   if(titleInput.value = '') {
-//     infoSection.innerText = 'Please enter a title for your link.';
-//   }
-// }
-//
-// function checkUrlInput() {
-//   if(urlInput.value = '') {
-//     infoSection.innerText = 'Please enter a URL for your link.';
-//   }
-// }
-// var infoSection = $('.info');
-// var titleInput = $('.title-input');
-// var urlInput = $('.url-input');
+function checkInputs() {
+  if(titleInput.val()==='' || urlInput.val()==='') {
+    submitButton.prop('disabled', true);
+  } else {
+    submitButton.prop('disabled', false);
+  }
+}
 
-// Adds Articles to List
+
+function disableSubmit() {
+  urlInput.keyup(checkInputs);
+  titleInput.keyup(checkInputs);
+};
+
+disableSubmit();
+
 
 $('.submit-button').on('click', function() {
+  // Return error messages
   var infoSection = $('.info');
   var titleInput = $('.title-input');
   var urlInput = $('.url-input');
@@ -32,6 +33,7 @@ $('.submit-button').on('click', function() {
   infoSection.text('Please enter a valid URL.');
 } else {
 
+// Adds Articles to List
   $('.container').append('<article><p class="link-title">' +
   $('.title-input').val() +
   '</p><p class="url-title">' +
