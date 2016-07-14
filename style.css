@@ -6,14 +6,13 @@ html {
 }
 
 body {
-  font-family: 'Secular One', sans-serif;
+  font-family: 'Taviraj', serif;
   color: black;
   display: flex;
   align-items: center;
   flex-direction: column;
   background-color: #19B068;
   background-size: 100%;
-  background-image: linear-gradient(#19B068);
 }
 
 h1 {
@@ -22,11 +21,25 @@ h1 {
   text-align: center;
 }
 
+.wrapper {
+  border: 5px solid black;
+}
+
 .submit-area {
   align-items: center;
   flex-direction: column;
 }
 
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info p {
+  max-width: 50%;
+  margin: 10px;
+}
 
 input {
   margin: 5px;
@@ -34,9 +47,8 @@ input {
 }
 
 .container {
-  height: 600px;
+  height: 100%;
   width: 100%;
-  border: 5px solid black;
   /*display: flex;
   -webkit-flex-direction: column;
   -moz-flex-direction: column;
@@ -46,8 +58,9 @@ input {
 }
 
 article {
-  background-color: blanchedalmond;
+  background-color: #3498DB;
   border: 2px solid black;
+  color: black;
   margin: 5px;
   display: flex
   flex-wrap: wrap;
@@ -61,7 +74,7 @@ article {
 
 button {
   margin: 10px;
-  background-color: #C51B15;
+  background-color: #3C4452;
   color: white;
   font-weight: bold;
 }
@@ -73,4 +86,33 @@ button {
     margin: 10px 0 0 10px;
 }
 
-@
+@media screen and (min-width: 750px){
+  body {
+    font-family: 'Taviraj', serif;
+    color: black;
+    /*display: flex;
+    align-items: center;
+    flex-direction: column;*/
+    background-color: #19B068;
+    background-size: 100%;
+  }
+
+  .wrapper {
+    width: 75%;
+  }
+
+  .submit-area {
+    display: flex;
+    flex-direction: row;
+  }
+
+  input {
+    margin: 5px;
+    width: 50%;
+  }
+
+  button {
+    height: 40px;
+  }
+
+}
