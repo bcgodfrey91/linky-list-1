@@ -7,12 +7,30 @@ html {
 
 body {
   font-family: 'Taviraj', serif;
-  color: black;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
   background-color: #19B068;
   background-size: 100%;
+}
+
+body,
+article {
+  color: black;
+}
+
+body,
+.info,
+article {
+  display: flex;
+}
+
+body,
+.submit-area {
+  flex-direction: column;
+}
+
+body,
+.submit-area,
+.info {
+  align-items: center;
 }
 
 h1 {
@@ -25,14 +43,8 @@ h1 {
   border: 5px solid black;
 }
 
-.submit-area {
-  align-items: center;
-  flex-direction: column;
-}
-
+article,
 .info {
-  display: flex;
-  align-items: center;
   justify-content: center;
 }
 
@@ -42,33 +54,24 @@ h1 {
 }
 
 input {
-  margin: 5px;
   width: 90%;
 }
 
 .container {
   height: 100%;
   width: 100%;
-  /*display: flex;
-  -webkit-flex-direction: column;
-  -moz-flex-direction: column;
-  -ms-flex-direction: column;
-  -o-flex-direction: column;
-  flex-direction: column;*/
 }
 
 article {
   background-color: #3498DB;
   border: 2px solid black;
-  color: black;
-  margin: 5px;
-  display: flex
   flex-wrap: wrap;
-  justify-content: center;
 }
 
+article,
+input,
 .submit-button,
-.clear-read-bookmarks {
+.clear-read-bookmarks, {
   margin: 5px;
 }
 
@@ -79,8 +82,6 @@ button {
   font-weight: bold;
 }
 
-
-
 .link-title,
 .url-title {
     margin: 10px 0 0 10px;
@@ -90,11 +91,12 @@ button {
   body {
     font-family: 'Taviraj', serif;
     color: black;
-    /*display: flex;
-    align-items: center;
-    flex-direction: column;*/
-    background-color: #19B068;
+    background-color: #3498DB;
     background-size: 100%;
+  }
+
+  article {
+    background-color: #19B068;
   }
 
   .wrapper {
