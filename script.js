@@ -25,9 +25,9 @@ function countAll () {
   readCounter = $('.read').length;
   totalCounter = $('article').length;
   unreadCounter = totalCounter - readCounter;
-  $('.link-counter').text('Number of Links: ' + totalCounter);
-  $('.read-links').text('Number of Read Links: ' + readCounter);
-  $('.unread-links').text('Number of Unread Links: ' + unreadCounter);
+  $('.link-counter').text(totalCounter);
+  $('.read-links').text(readCounter);
+  $('.unread-links').text(unreadCounter);
 }
 
 countAll();
